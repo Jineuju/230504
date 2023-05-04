@@ -1,0 +1,320 @@
+@charset "utf-8";
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+/* popup */
+.popup {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  min-height: 200px;
+  background-color: #f8f8f8;
+  border: 2px solid #000;
+  border-radius: 5px;
+  padding: 20px;
+  z-index: 10;
+  /* box-shadow: ; */
+}
+
+.popup h1 {
+  font: bold 27px/1 "arial";
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.popup p {
+  font: 15px/1.5 "arial";
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.popup button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  outline: none;
+  /* 디자인이나 접근성점수가 감점될 수 있으니 a태그로 작성할 것*/
+  background-color: #333;
+  padding: 5px 10px;
+  color: #eee;
+  cursor: pointer;
+}
+
+/* header */
+header {
+  width: 100%;
+}
+
+header .inner {
+  width: 1200px;
+  height: 100px;
+  margin: 0 auto;
+  background-color: #eee;
+  position: relative;
+}
+
+header .inner h1 {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+}
+
+#gnb {
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+#gnb > li {
+  float: left;
+  position: relative;
+  text-align: center;
+}
+
+#gnb > li > a {
+  display: block;
+  width: 150px;
+  height: 60px;
+  background-color: #eee;
+  font: bold 20px/60px "arial";
+  color: #333;
+}
+
+#gnb > li > a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+#gnb > li > a.on {
+  background-color: #333;
+  color: #fff;
+}
+
+.sub {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  display: none;
+}
+
+.sub > li > a {
+  display: block;
+  width: 150px;
+  height: 40px;
+  background-color: #555;
+  font: 14px/40px "arial";
+  color: #fff;
+  text-align: center;
+}
+
+.sub > li > a:hover {
+  color: orange;
+  background-color: #333;
+}
+
+/* slider */
+#slide {
+  width: 1200px;
+  height: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#slide .frame {
+  width: 900px;
+  position: relative;
+}
+
+/* contentBox */
+#contentBox {
+  width: 100%;
+}
+
+#contentBox .inner {
+  width: 1200px;
+  height: 200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.NGboard {
+  flex: 1.5;
+  height: 200px;
+  overflow: hidden;
+}
+
+.NGboard .tab {
+  display: flex;
+  width: 100%;
+  height: 50px;
+}
+
+.NGboard .tab li {
+  width: 100px;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.NGboard .tab li a {
+  font: bold 15px/1 "arial";
+  color: #fff;
+}
+
+.NGboard .tab li.on {
+  background-color: #fff;
+}
+
+.NGboard .tab li.on a {
+  color: #333;
+}
+
+.content {
+  width: 100%;
+  height: 150px;
+  position: relative;
+  /*calc를 사용해서 정확한 높이값을 지정하는 것이 필요*/
+}
+
+.content div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  opacity: 0;
+  z-index: 1;
+}
+
+.content div.on {
+  opacity: 1;
+  z-index: 2;
+}
+
+#notice {
+  justify-content: flex-start;
+}
+
+#notice ul {
+  width: 100%;
+}
+
+#notice ul li {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  cursor: pointer;
+}
+
+#notice ul li a {
+  font: 13px/30px "맑은 고딕";
+  color: #333;
+  margin-left: 10px;
+}
+
+#notice ul li span {
+  font: 10px/30px "arial";
+  margin-right: 30px;
+  color: #333;
+}
+
+#notice ul li:hover {
+  background-color: #eee;
+}
+
+/* banner */
+
+.banner {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.baro {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5px;
+}
+
+.baro a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.baro a span {
+  font-size: 10px;
+  text-align: center;
+}
+
+footer {
+  width: 100%;
+}
+
+footer .inner {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+footer .inner .logo {
+  display: flex;
+  justify-content: center;
+  flex: 1.5;
+}
+
+footer .inner .copyright {
+  flex: 3;
+  text-align: center;
+}
+
+footer .inner .copyright span {
+  font: bold 12px/1 "arial";
+  color: #333;
+}
+
+footer .inner .sns {
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
